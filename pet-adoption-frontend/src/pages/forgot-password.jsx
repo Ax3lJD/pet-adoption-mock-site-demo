@@ -26,7 +26,7 @@ export default function ForgotPassword() {
     setSuccess("");
 
     try {
-      const response = await fetch('http://35.225.196.242:8080/api/forgot-password', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080"}/api/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

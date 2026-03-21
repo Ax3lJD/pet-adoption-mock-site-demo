@@ -36,7 +36,7 @@ export default function ResetPassword() {
     }
 
     try {
-      const response = await fetch('http://35.225.196.242:8080/api/reset-password', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080"}/api/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
