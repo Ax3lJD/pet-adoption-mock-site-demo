@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/events")
-@CrossOrigin(origins = "http://35.225.196.242:3000")
 public class EventController {
 
     @Autowired

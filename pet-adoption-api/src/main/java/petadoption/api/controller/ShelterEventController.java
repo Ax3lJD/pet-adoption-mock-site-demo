@@ -25,7 +25,6 @@ import petadoption.api.user.UserRepository;
 
 @RestController
 @RequestMapping("/api/shelter/events")
-@CrossOrigin(origins = "http://35.225.196.242:3000")
 public class ShelterEventController {
 
     private static final Logger logger = LoggerFactory.getLogger(ShelterEventController.class);

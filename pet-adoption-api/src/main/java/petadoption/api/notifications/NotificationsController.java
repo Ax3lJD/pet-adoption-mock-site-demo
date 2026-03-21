@@ -28,7 +28,6 @@ import org.slf4j.LoggerFactory;
  */
 @RestController
 @RequestMapping("/api/notifications")
-@CrossOrigin(origins = "${cors.allowed.origins:http://35.225.196.242:3000}")
 public class NotificationsController {
 
     private static final Logger log = LoggerFactory.getLogger(NotificationsController.class);

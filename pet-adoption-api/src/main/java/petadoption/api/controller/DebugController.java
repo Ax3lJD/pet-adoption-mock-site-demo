@@ -7,7 +7,6 @@ import petadoption.api.user.UserRepository;
 
 @RestController
 @RequestMapping("/debug")
-@CrossOrigin(origins = {"http://35.225.196.242:3000", "http://localhost:3000"})
 public class DebugController {
 
     @Autowired

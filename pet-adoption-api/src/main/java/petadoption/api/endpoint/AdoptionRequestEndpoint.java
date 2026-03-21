@@ -15,7 +15,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/adoption-requests")
-@CrossOrigin(origins = "http://35.225.196.242:3001")
 public class AdoptionRequestEndpoint {
 
     @Autowired
