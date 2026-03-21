@@ -1,6 +1,7 @@
 package petadoption.api.passwordReset;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +31,9 @@ public class PasswordResetService {
     @Autowired
     private UserService userService;
 
+    @Value("${FRONTEND_URL:http://localhost:3000}")
+    private String frontendUrl;
+
     @Transactional(timeout = 5)
     public void processForgotPassword(String email) {
         User user = userRepository.findByEmailAddress(email);
@@ -46,7 +50,7 @@ public class PasswordResetService {
         passwordResetTokenRepository.deleteByUserEmail(email);
         passwordResetTokenRepository.save(passwordResetToken);
 
-        String resetLink = "http://35.225.196.242:3000/reset-password?token=" + token;
+        String resetLink = frontendUrl + "/reset-password?token=" + token;
         mailService.sendPasswordResetEmail(user.getEmailAddress(), resetLink);
     }
 
