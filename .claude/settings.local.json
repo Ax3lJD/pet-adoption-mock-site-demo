@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find C:UserszsuprDocumentsGitHubpet-adoption-mock-site-demo -name *Test*.java -o -name *test*.java)",
+      "Bash(xargs grep:*)",
+      "Bash(find C:UserszsuprDocumentsGitHubpet-adoption-mock-site-demopet-adoption-apisrcmainjava -name *.java -type f)",
+      "Bash(wc:*)",
+      "Bash(find C:UserszsuprDocumentsGitHubpet-adoption-mock-site-demopet-adoption-apisrcmain -name *.java -type f)"
+    ]
+  }
+}
