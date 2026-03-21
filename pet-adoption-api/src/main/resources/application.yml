@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/petadoption
-    username: root
-    password: password
+    url: jdbc:mysql://${MYSQLHOST:localhost}:${MYSQLPORT:3307}/${MYSQLDATABASE:petadoption}
+    username: ${MYSQLUSER:root}
+    password: ${MYSQLPASSWORD:password}
     driverClassName: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -46,4 +46,4 @@ spring:
 
 pet:
   upload:
-    base-path: D:/petAdaptWebsite/s25-pet-adoption-team-2/pet-adoption-api/uploads
+    base-path: ${UPLOAD_PATH:./pet-uploads}
