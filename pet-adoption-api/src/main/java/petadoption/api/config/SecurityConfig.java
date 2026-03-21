@@ -29,6 +29,8 @@ public class SecurityConfig {
                 .and()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/login", "/api/signup", "/api/forgot-password", "/api/reset-password").permitAll()
+                .requestMatchers("/ping").permitAll()
+                .requestMatchers(HttpMethod.GET, "/api/pets/import-csv").permitAll()
                 .requestMatchers(HttpMethod.GET, "/images/**", "/uploads/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/pets").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/events").permitAll()
