@@ -174,7 +174,10 @@ export const PetAdoptionThemeProvider = ({ children }) => {
         setMode(savedMode);
         applyBodyClass(savedMode);
       } else {
-        applyBodyClass('light');
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initialMode = prefersDarkMode ? 'dark' : 'light';
+        setMode(initialMode);
+        applyBodyClass(initialMode);
       }
     }
   }, []);
