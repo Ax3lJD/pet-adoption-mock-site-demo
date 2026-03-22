@@ -6,7 +6,7 @@ COPY . .
 RUN ./gradlew build --no-daemon -p .
 
 # Copy the build artifacts
-FROM openjdk:22
+FROM eclipse-temurin:22-jre
 WORKDIR /app
 COPY --from=build /build/build/libs/pet-adoption-api-1.0.0-SNAPSHOT.jar app.jar
 
